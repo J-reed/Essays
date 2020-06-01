@@ -4,8 +4,10 @@
     <head>
         <meta charset="UTF-8">
 
+        <script src="index.js" type="text/javascript"></script>
+
         <!-- Text appearing in the `tab' -->
-		    <title>Test</title>
+        <title>Test</title>
 
     </head>
     
@@ -14,11 +16,18 @@
 
         <p> This page can navigate to blogs using the index below. </p>
 
+        <h2> Language Setting </h2>
+
+            <ul onload="setDefaultLang()">
+                <li> <a>English</a> </li>
+                <li> <a>French</a> </li>
+            </ul>
+
         <h2> Existing Blogs </h2>
-        
+            
         <ol>
 
-            <item> Sample Blog: <a href="/Essays/blogs/Sample_blog/sample_en.html"> En </a> </item>
+            <li>  <a href="javascript:getBlogLink('sample.html')"></a>> Sample Blog </a> </li>
 
         </ol>
 

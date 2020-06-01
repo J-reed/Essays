@@ -32,6 +32,7 @@ function setLang(new_lang){
 
 function getBlogLink(blog_name){
 
-    return blog_directory + blog_name;
+    window.open(blog_directory + blog_name, _blank,replace= true);
+
 
 }

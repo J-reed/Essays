@@ -11,7 +11,9 @@ function setDefaultLang(){
     lang = Lang.ENGLISH;
 }
 
-function setLang(new_lang){
+function setLang(){
+
+    var new_lang = document.getElementById("language_dropbox").nodeValue;
 
     switch(new_lang){
         case 0:

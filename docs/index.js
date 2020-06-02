@@ -13,7 +13,7 @@ function setDefaultLang(){
 
 function setLang(){
 
-    var lang = document.getElementById("language_dropbox").value;
+    lang = document.getElementById("language_dropbox").value;
 
     switch(lang){
         case 0:

@@ -16,10 +16,10 @@ function setLang(){
     lang = document.getElementById("language_dropbox").value;
 
     switch(lang){
-        case 0:
+        case "Lang.ENGLISH":
             blog_directory = "/Essays/blogs/English/";
             break;
-        case 1:
+        case "Lang.FRENCH":
             blog_directory = "/Essays/blogs/French/";
             break;
         default:

@@ -1,4 +1,3 @@
-var accepted_langs = ["Lang.ENGLISH", "Lang.FRENCH"];
 
 function update_language(){
     lang = document.getElementById("language_dropbox").value;

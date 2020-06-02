@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+
+        <script src="index.js" type="text/javascript"></script>
+        <script src="language_change.js" type="text/javascript"></script>
+
+        <!-- Text appearing in the `tab' -->
+        <title>Test</title>
+
+    </head>
+    
+    <body>
+        <h1> Comment utiliser ce siteweb </h1>
+
+        <p> Cette page donner accès de les blogs dessous </p>
+
+        <h2> Paramètres de langue</h2>
+
+            <select id="language_dropbox" onchange="javascript:update_language()">
+                <option  value=Lang.ENGLISH> Anglias </option>
+                <option value=Lang.FRENCH> Francais </option>
+            </select>
+
+        <h2> Blogs actuels </h2>
+            
+        <ol>
+
+            <li>  <a href="javascript:getBlogLink('sample.html')"> Exemple Blog </a> </li>
+
+        </ol>
+
+    </body>
+    
+
+</html>

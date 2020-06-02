@@ -26,6 +26,8 @@ function update_language(){
         final_url+=section+"/";
     }
     
+    final_url = final_url.substr(0, final_url.length - 1);
+
     window.open(final_url, "_self","", false);
 
 }

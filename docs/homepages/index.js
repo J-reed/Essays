@@ -1,7 +1,8 @@
 
 
+var language_set = "";
 
-var language_set = check_lang();
+
 var blog_directory = "/Essays/blogs/English/";
 
 function check_lang(){

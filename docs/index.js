@@ -1,14 +1,11 @@
-var Lang = {
-    ENGLISH: 0,
-    FRENCH: 1,
-};
 
-var lang = Lang.ENGLISH;
+
+var lang = "Lang.ENGLISH";
 
 var blog_directory = "/Essays/blogs/English/";
 
 function setDefaultLang(){
-    lang = Lang.ENGLISH;
+    lang = "Lang.ENGLISH";
 }
 
 function setLang(){

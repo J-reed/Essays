@@ -3,10 +3,19 @@
 
     <head>
         <meta charset="UTF-8">
+        
+        <script src="../langauge_change.js" type="text/javascript"></script>
         <!-- Text appearing in the `tab' -->
 		<title>A sample blog</title>
     </head>
     <body>
+
+        <h2> Language Setting </h2>
+
+            <select id="language_dropbox" onchange="javascript:setLang()">
+                <option  value=Lang.ENGLISH> English </option>
+                <option value=Lang.FRENCH> French </option>
+            </select>
 
         <h3> <a href="../../index.html">Home Page</a> </h3>
 

@@ -11,16 +11,15 @@ function check_lang(){
 
     switch(lang){
         case "Lang.ENGLISH":
-            language = "English";
+            language_set = "English";
             break;
         case "Lang.FRENCH":
-            language = "French";
+            language_set = "French";
             break;
         default:
-            language = "English";
+            language_set = "English";
     }
 
-    return language;
 }
 
 function getBlogLink(blog_name){

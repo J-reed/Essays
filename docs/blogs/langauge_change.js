@@ -3,7 +3,7 @@ var accepted_langs = ["Lang.ENGLISH", "Lang.FRENCH"];
 function update_language(){
     lang = document.getElementById("language_dropbox").value;
 
-    current_url = window.location.current_url;
+    current_url = window.location.href;
     var url_element_array = current_url.split("/");
 
     var dir = "English";

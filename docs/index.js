@@ -13,19 +13,16 @@ function setDefaultLang(){
 
 function setLang(){
 
-    var new_lang = document.getElementById("language_dropbox").nodeValue;
+    var lang = document.getElementById("language_dropbox").value;
 
-    switch(new_lang){
+    switch(lang){
         case 0:
-            lang = Lang.ENGLISH;
             blog_directory = "/Essays/blogs/English/";
             break;
         case 1:
-            lang = Lang.FRENCH;
             blog_directory = "/Essays/blogs/French/";
             break;
         default:
-            lang = Lang.ENGLISH;
             blog_directory = "/Essays/blogs/English/";
     }
 

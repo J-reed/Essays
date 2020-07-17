@@ -27,6 +27,6 @@ if exist %location%\build\ (
 	del %rel_location%%app_name%.exe
 )
 
-py -m PyInstaller src\__main__.py --name %app_name% --noconsole
+py -m PyInstaller src\__main__.py --name %app_name% --noconsole --hidden-import=pkg_resources.py2_warn 
 
 mklink %rel_location%%app_name%.exe %executable_location%

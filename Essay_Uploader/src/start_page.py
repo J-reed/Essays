@@ -38,39 +38,41 @@ class AppInit(tk.Tk):
         self.language_box = ttk.OptionMenu(self, self.language_string_variable, *SupportedLanguages.get_supported_languages())
         self.language_box.place(bordermode='outside', relx=0.4, rely=0.3)
 
-        # Text boxes
-        
-        self.blog_title_text = tk.StringVar()
-        self.blog_title_entry = ttk.Entry(self, width=10, textvariable=self.blog_title_text)
-        self.blog_title_entry.place(bordermode='outside', relx=0.4, rely=0.1)
-
         # Buttons
 
         self.get_files_button = ttk.Button(self, text="Upload a document", command=lambda: self.get_document(SupportedLanguages.get_enum(self.language_string_variable.get())))
         self.get_files_button.place(bordermode='outside', relx=0.4, rely=0.6)
 
-        self.upload_files_button = ttk.Button(self, text="Upload to website", command=lambda: self.upload_blog_files(self.blog_title_text.get()))
+        self.upload_files_button = ttk.Button(self, text="Upload to website", command=lambda: self.upload_blog_files())
         self.upload_files_button.place(bordermode='outside', relx=0.6, rely=0.6)
 
     # Function for setting loading the files into the application and assiging their language
     def get_document(self, language: SupportedLanguages.LangEnum):
         f = filedialog.askopenfile(initialdir="./", title="Select a document to upload", filetypes=(('Article files', '*.md'), ('Any file', '*.*')))
         
+        # Gets the name of the file selected
+        file_title = ((f.name).split('/')[-1]).split('.')[0]
+        print("hi ", file_title)
+        # Get the contents of the file
         file_text = f.read()
-        file_language_pair = (file_text, language)
-        self.files_for_upload.append(file_language_pair)
+        
+        title_file_language_triple = [file_title, file_text, language]
+        self.files_for_upload.append(title_file_language_triple)
 
 
     # Function to push the added files to the website locations and update the visible webpage
-    def upload_blog_files(self, blog_title: str):
+    def upload_blog_files(self):
         
         formatter = FileFormatter()
-        webpages_and_languages = [(formatter.create_webpage(*file_language_pair), file_language_pair[1]) for file_language_pair in self.files_for_upload]
+   
+        for title_webpage_language_triple in self.files_for_upload:
+            title = title_webpage_language_triple[0]
+            webpage = formatter.create_webpage(*title_webpage_language_triple[1:])
+            language = title_webpage_language_triple[2]
 
-        for webpage_language_pair in webpages_and_languages:
-            save_webpage_location = webpageSaveLocation + SupportedLanguages.get_string(webpage_language_pair[1]) + "\\" + blog_title+".html"
+            save_webpage_location = webpageSaveLocation + SupportedLanguages.get_string(language) + "\\" + title +".html"
 
-            with open(save_webpage_location, 'w') as webpage:
-                webpage.write(webpage_language_pair[0])
+            with open(save_webpage_location, 'w') as saved_webpage_file:
+                saved_webpage_file.write(webpage)
 
        
